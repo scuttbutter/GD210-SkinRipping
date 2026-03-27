@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="SKINRIP"
+config/name="Skin rip"
+run/main_scene="res://main scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
