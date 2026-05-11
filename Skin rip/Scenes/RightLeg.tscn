@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d1sw5n7uynx10"]
+
+[ext_resource type="Texture2D" uid="uid://b3fx4jqw748sg" path="res://images/orange.jpg" id="1_nhslr"]
+[ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_tstp3"]
+[ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_pli11"]
+[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprite.gd" id="2_xpggs"]
+[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/NavelOrange.webp" id="3_tstp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j42vl"]
+size = Vector2(689.2763, 809.8264)
+
+[node name="Node2D" type="Node2D" unique_id=748169150]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1801653803]
+anchor_mode = 0
+script = ExtResource("1_tstp3")
+
+[node name="Hitbox" type="Area2D" parent="Camera2D" unique_id=1032060823 node_paths=PackedStringArray("camera")]
+position = Vector2(4.9976807, -485.924)
+scale = Vector2(1.6727693, 1.424997)
+script = ExtResource("2_pli11")
+zoom_threshold = 0.5
+larger_than = false
+scene_to_load = "res://Scenes/Mirror.tscn"
+camera = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Hitbox" unique_id=2130026707]
+position = Vector2(341.6504, 745.91315)
+scale = Vector2(0.9999999, 0.99999994)
+shape = SubResource("RectangleShape2D_j42vl")
+
+[node name="LegLimbR" type="Sprite2D" parent="." unique_id=631197479]
+position = Vector2(625, 857.75)
+scale = Vector2(0.03938055, 0.18551724)
+texture = ExtResource("1_nhslr")
+script = ExtResource("2_xpggs")
+new_texture = ExtResource("3_tstp3")

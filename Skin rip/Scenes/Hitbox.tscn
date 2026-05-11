@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ditgcbiert3rx"]
+
+[ext_resource type="Script" uid="uid://b0k2i03cb72cl" path="res://Scripts/11hitbox.gd" id="1_0ast3"]
+[ext_resource type="Script" uid="uid://dci3cno5l821u" path="res://Scripts/gridSpawner.gd" id="1_geytc"]
+[ext_resource type="Texture2D" uid="uid://05lw85t2x3o2" path="res://images/Screenshot 2026-04-10 at 7.39.20 PM.png" id="2_geytc"]
+[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/NavelOrange.webp" id="3_6ryw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrpa5"]
+size = Vector2(274, 273)
+
+[node name="Node2D" type="Node2D" unique_id=1487700232]
+script = ExtResource("1_geytc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=676391746]
+script = ExtResource("1_0ast3")
+normal_texture = ExtResource("2_geytc")
+active_texture = ExtResource("3_6ryw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1255474844]
+position = Vector2(127, 126.5)
+shape = SubResource("RectangleShape2D_yrpa5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=47731764]

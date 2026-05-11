@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b11f5p7litxwa"]
+
+[ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_ixni0"]
+[ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_1um3c"]
+[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprite.gd" id="2_ixni0"]
+[ext_resource type="Texture2D" uid="uid://cxwwxr73etynh" path="res://images/LeftArm.png" id="3_ixni0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86apk"]
+size = Vector2(689.2763, 809.8264)
+
+[node name="Node2D" type="Node2D" unique_id=463090887]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1713185254]
+anchor_mode = 0
+script = ExtResource("1_ixni0")
+
+[node name="Hitbox" type="Area2D" parent="Camera2D" unique_id=1361362797 node_paths=PackedStringArray("camera")]
+position = Vector2(4.9976807, -485.924)
+scale = Vector2(1.6727693, 1.424997)
+script = ExtResource("2_1um3c")
+zoom_threshold = 0.5
+larger_than = false
+scene_to_load = "res://Scenes/Mirror.tscn"
+camera = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Hitbox" unique_id=1540551070]
+position = Vector2(341.6504, 745.91315)
+scale = Vector2(0.9999999, 0.99999994)
+shape = SubResource("RectangleShape2D_86apk")
+
+[node name="ArmL" type="Sprite2D" parent="." unique_id=1179682194]
+position = Vector2(579, 576.00006)
+scale = Vector2(0.9947916, 1.0000001)
+texture = ExtResource("3_ixni0")
+script = ExtResource("2_ixni0")

@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://34ircjlbc6br"]
+
+[ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="2_81i5a"]
+[ext_resource type="Texture2D" uid="uid://co10o7l4lxhot" path="res://images/Screenshot 2026-04-10 at 6.42.20 PM.png" id="3_fc8dv"]
+[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprite.gd" id="4_g5u1a"]
+[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/NavelOrange.webp" id="5_avnl6"]
+[ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="6_1oxlx"]
+[ext_resource type="Texture2D" uid="uid://cynakou0q7pky" path="res://images/Ripe-half-of-pink-grapefruit-citrus-fruit-isolated-on-transparent-background-PNG.png" id="6_bp82t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81i5a"]
+size = Vector2(688.6784, 811.2298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oxlx"]
+size = Vector2(51.421265, 40.13416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc8dv"]
+size = Vector2(37.253643, 28.952171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5u1a"]
+size = Vector2(30.199997, 33.399998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avnl6"]
+size = Vector2(30.199999, 33.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp82t"]
+size = Vector2(30.224997, 30.899996)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8kyi"]
+size = Vector2(30.224997, 30.899992)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivfga"]
+size = Vector2(30.224997, 30.999998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bynro"]
+size = Vector2(30.224997, 30.999998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33onc"]
+size = Vector2(28.199999, 30.999998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0rs3"]
+size = Vector2(28.412495, 30.899994)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iej8d"]
+size = Vector2(28.412495, 33.40001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1tjf"]
+size = Vector2(26.3, 30.999998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgi2e"]
+size = Vector2(26.3, 30.899998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq1ft"]
+size = Vector2(26.299995, 33.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enalc"]
+size = Vector2(32.61249, 20.40001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rb45"]
+size = Vector2(30.706247, 20.40001)
+
+[node name="Node2D" type="Node2D" unique_id=598877771]
+
+[node name="Face" type="Sprite2D" parent="." unique_id=702537933]
+position = Vector2(566, 548)
+scale = Vector2(0.50525737, 0.54027843)
+texture = ExtResource("3_fc8dv")
+script = ExtResource("4_g5u1a")
+new_texture = ExtResource("5_avnl6")
+new_texture1 = ExtResource("6_bp82t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1106410161]
+anchor_mode = 0
+script = ExtResource("2_81i5a")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=833039955 node_paths=PackedStringArray("camera")]
+position = Vector2(4.9976807, -485.92398)
+scale = Vector2(1.6727692, 1.424997)
+script = ExtResource("6_1oxlx")
+zoom_threshold = 0.5
+larger_than = false
+scene_to_load = "res://Scenes/Mirror.tscn"
+camera = NodePath("../Camera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=895054041]
+position = Vector2(341.35153, 745.91315)
+shape = SubResource("RectangleShape2D_81i5a")
+
+[node name="LeftSideNeck" type="Area2D" parent="." unique_id=2050282826]
+position = Vector2(566, 548)
+scale = Vector2(0.50525737, 0.54027843)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSideNeck" unique_id=570811055]
+position = Vector2(-217.89911, 948.43335)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_1oxlx")
+debug_color = Color(0.508327, 0.11813275, 0.28863233, 0.41960785)
+
+[node name="RightSideNeck" type="Area2D" parent="." unique_id=31479829]
+position = Vector2(566, 548)
+scale = Vector2(0.50525737, 0.54027843)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSideNeck" unique_id=60705519]
+position = Vector2(295.8888, 947.6595)
+scale = Vector2(13.76, 13.76)
+shape = SubResource("RectangleShape2D_fc8dv")
+debug_color = Color(0.508327, 0.11813275, 0.28863233, 0.41960785)
+
+[node name="LowerLeftFace" type="Area2D" parent="." unique_id=1260838164]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerLeftFace" unique_id=1737194691]
+position = Vector2(435, 785)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_g5u1a")
+debug_color = Color(0.508327, 0.11813275, 0.28863233, 0.41960785)
+
+[node name="LowerRightFace" type="Area2D" parent="." unique_id=501430157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerRightFace" unique_id=1310200038]
+position = Vector2(737, 785)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_avnl6")
+debug_color = Color(0.508327, 0.11813275, 0.28863233, 0.41960785)
+
+[node name="LeftEye" type="Area2D" parent="." unique_id=1486470337]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftEye" unique_id=1105069323]
+position = Vector2(435, 463.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_bp82t")
+debug_color = Color(0.508327, 0.11813275, 0.28863233, 0.41960785)
+
+[node name="RightEye" type="Area2D" parent="." unique_id=224888342]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightEye" unique_id=475330323]
+position = Vector2(737, 463.50003)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_m8kyi")
+debug_color = Color(0.508327, 0.11813275, 0.28863233, 0.41960785)
+
+[node name="LeftForehead" type="Area2D" parent="." unique_id=917533820]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftForehead" unique_id=1825674372]
+position = Vector2(435, 154)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_ivfga")
+debug_color = Color(0.37850493, 0.49454534, 9.62615e-08, 0.41960785)
+
+[node name="RightForehead" type="Area2D" parent="." unique_id=424244368]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightForehead" unique_id=1752945694]
+position = Vector2(737, 154)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_bynro")
+debug_color = Color(0.43364662, 0.513858, 0.08569019, 0.41960785)
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=2068082071]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1352913449]
+position = Vector2(142, 154)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_33onc")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=857851528]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=2135460830]
+position = Vector2(140.93753, 463.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_q0rs3")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=1647384216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1837409560]
+position = Vector2(140.93753, 784.99994)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_iej8d")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=394769898]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=148812629]
+position = Vector2(1020.5, 154)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_u1tjf")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D7" type="Area2D" parent="." unique_id=1942896008]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7" unique_id=2028769939]
+position = Vector2(1020.5, 463.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_qgi2e")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D8" type="Area2D" parent="." unique_id=1630084860]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8" unique_id=1976705723]
+position = Vector2(1020.5, 785.00006)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_rq1ft")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D9" type="Area2D" parent="." unique_id=790234994]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9" unique_id=796280330]
+position = Vector2(161.93752, 1054)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_enalc")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
+
+[node name="Area2D10" type="Area2D" parent="." unique_id=367447885]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10" unique_id=1992462212]
+position = Vector2(998.53125, 1054.0001)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_7rb45")
+debug_color = Color(0.40308872, 0.54949427, 0.012223863, 0.41960785)
