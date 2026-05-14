@@ -65,8 +65,9 @@ position = Vector2(566, 548)
 scale = Vector2(0.50525737, 0.54027843)
 texture = ExtResource("3_fc8dv")
 script = ExtResource("4_g5u1a")
-new_texture = ExtResource("5_avnl6")
-new_texture1 = ExtResource("6_bp82t")
+idle_texture = ExtResource("3_fc8dv")
+click_texture = ExtResource("5_avnl6")
+passed_texture = ExtResource("6_bp82t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1106410161]
 anchor_mode = 0
