@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ctl1gvbeg5dg8" path="res://images/Screenshot 2026-04-10 at 7.44.15 PM.png" id="1_0oouh"]
 [ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_xlg0k"]
-[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprite.gd" id="2_1j1bm"]
-[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/NavelOrange.webp" id="3_xlg0k"]
+[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="2_1j1bm"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="5_34siv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euyq4"]
@@ -36,4 +35,3 @@ position = Vector2(344.63947, 655.03577)
 scale = Vector2(0.24518211, 0.30885863)
 texture = ExtResource("1_0oouh")
 script = ExtResource("2_1j1bm")
-new_texture = ExtResource("3_xlg0k")

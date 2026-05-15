@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_ixni0"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_1um3c"]
-[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprite.gd" id="2_ixni0"]
+[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="2_ixni0"]
 [ext_resource type="Texture2D" uid="uid://cxwwxr73etynh" path="res://images/LeftArm.png" id="3_ixni0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86apk"]

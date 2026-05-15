@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_usk00"]
 [ext_resource type="Texture2D" uid="uid://b3fx4jqw748sg" path="res://images/orange.jpg" id="1_vwi43"]
-[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprite.gd" id="2_usk00"]
+[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="2_usk00"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_v54y7"]
-[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/NavelOrange.webp" id="3_gs0hw"]
-[ext_resource type="Texture2D" uid="uid://cynakou0q7pky" path="res://images/Ripe-half-of-pink-grapefruit-citrus-fruit-isolated-on-transparent-background-PNG.png" id="5_gs0hw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_683ov"]
 size = Vector2(689.2763, 809.8264)
@@ -35,5 +33,3 @@ position = Vector2(534, 855.99994)
 scale = Vector2(0.041924745, 0.1863506)
 texture = ExtResource("1_vwi43")
 script = ExtResource("2_usk00")
-new_texture = ExtResource("3_gs0hw")
-new_texture1 = ExtResource("5_gs0hw")
