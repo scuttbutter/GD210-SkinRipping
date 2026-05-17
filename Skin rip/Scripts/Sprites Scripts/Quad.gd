@@ -3,22 +3,22 @@ extends Sprite2D
 @export var idle_texture: Texture2D
 @export var click_texture: Texture2D
 
-# Sprite shown if click started on LEFT side
-@export var left_passed_sprite: Sprite2D
-
-# Sprite shown if click started on RIGHT side
-@export var right_passed_sprite: Sprite2D
+# Sprites for each screen quadrant
+@export var top_left_sprite: Sprite2D
+@export var top_right_sprite: Sprite2D
+@export var bottom_left_sprite: Sprite2D
+@export var bottom_right_sprite: Sprite2D
 
 # Distance mouse must travel before triggering
 @export var trigger_distance := 150.0
 
-# Transition speed
-@export var fade_time := 0.15
-
 var clicked := false
 var passed_point := false
-var clicked_left_side := false
 
+# Which quadrant was clicked
+var clicked_quadrant := ""
+
+# Where the mouse was first clicked
 var click_position := Vector2.ZERO
 
 
@@ -26,42 +26,37 @@ func _ready():
 
 	texture = idle_texture
 
-	# Hide passed sprites
-	if left_passed_sprite:
-		left_passed_sprite.visible = false
-		left_passed_sprite.modulate.a = 0.0
-
-	if right_passed_sprite:
-		right_passed_sprite.visible = false
-		right_passed_sprite.modulate.a = 0.0
+	# Hide all quadrant sprites
+	hide_sprite(top_left_sprite)
+	hide_sprite(top_right_sprite)
+	hide_sprite(bottom_left_sprite)
+	hide_sprite(bottom_right_sprite)
 
 
-func fade_to_texture(new_texture: Texture2D):
+func hide_sprite(sprite: Sprite2D):
 
-	var tween = create_tween()
-
-	# Fade out
-	tween.tween_property(self, "modulate:a", 0.0, fade_time)
-
-	# Change texture
-	tween.tween_callback(func():
-		texture = new_texture
-	)
-
-	# Fade back in
-	tween.tween_property(self, "modulate:a", 1.0, fade_time)
+	if sprite:
+		sprite.visible = false
 
 
-func fade_in_sprite(sprite: Sprite2D):
+func determine_quadrant(mouse_pos: Vector2):
 
-	if not sprite:
-		return
+	var screen_size = get_viewport_rect().size
 
-	sprite.visible = true
-	sprite.modulate.a = 0.0
+	var left_side = mouse_pos.x < screen_size.x / 2.0
+	var top_side = mouse_pos.y < screen_size.y / 2.0
 
-	var tween = create_tween()
-	tween.tween_property(sprite, "modulate:a", 1.0, fade_time)
+	if top_side and left_side:
+		clicked_quadrant = "top_left"
+
+	elif top_side and not left_side:
+		clicked_quadrant = "top_right"
+
+	elif not top_side and left_side:
+		clicked_quadrant = "bottom_left"
+
+	else:
+		clicked_quadrant = "bottom_right"
 
 
 func _input(event):
@@ -69,28 +64,27 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 
-			# Click on sprite
+			# Click on this sprite
 			if event.pressed and get_rect().has_point(to_local(event.position)):
 
 				clicked = true
 				click_position = event.position
 
-				# Determine left/right side
-				var screen_width = get_viewport_rect().size.x
-				clicked_left_side = event.position.x < screen_width / 2.0
+				# Determine clicked quadrant
+				determine_quadrant(event.position)
 
-				# Fade to click texture
+				# Change to click texture
 				if not passed_point:
-					fade_to_texture(click_texture)
+					texture = click_texture
 
-			# Mouse release
+			# Mouse released
 			elif not event.pressed:
 
 				clicked = false
 
 				# Return to idle if threshold not reached
 				if not passed_point:
-					fade_to_texture(idle_texture)
+					texture = idle_texture
 
 
 	if event is InputEventMouseMotion and clicked:
@@ -102,11 +96,24 @@ func _input(event):
 
 			passed_point = true
 
-			# Fade back to idle
-			fade_to_texture(idle_texture)
+			# Return to idle texture
+			texture = idle_texture
 
-			# Show correct sprite
-			if clicked_left_side:
-				fade_in_sprite(left_passed_sprite)
-			else:
-				fade_in_sprite(right_passed_sprite)
+			# Show sprite based on quadrant
+			match clicked_quadrant:
+
+				"top_left":
+					if top_left_sprite:
+						top_left_sprite.visible = true
+
+				"top_right":
+					if top_right_sprite:
+						top_right_sprite.visible = true
+
+				"bottom_left":
+					if bottom_left_sprite:
+						bottom_left_sprite.visible = true
+
+				"bottom_right":
+					if bottom_right_sprite:
+						bottom_right_sprite.visible = true

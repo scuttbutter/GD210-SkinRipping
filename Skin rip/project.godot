@@ -17,17 +17,18 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Skin rip"
 run/main_scene="uid://34ircjlbc6br"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-InputManager="*uid://ba3bxuv1j8q4p"
+GlobalSceneState="*uid://dhgu3gqchjtxy"
 
 [display]
 
 window/size/viewport_height=1152
+window/show_image=true
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"

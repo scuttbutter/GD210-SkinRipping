@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b0k2i03cb72cl" path="res://Scripts/11hitbox.gd" id="1_0ast3"]
 [ext_resource type="Script" uid="uid://dci3cno5l821u" path="res://Scripts/gridSpawner.gd" id="1_geytc"]
-[ext_resource type="Texture2D" uid="uid://05lw85t2x3o2" path="res://images/Screenshot 2026-04-10 at 7.39.20 PM.png" id="2_geytc"]
-[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/NavelOrange.webp" id="3_6ryw8"]
+[ext_resource type="Texture2D" uid="uid://05lw85t2x3o2" path="res://images/Sketch/Screenshot 2026-04-10 at 7.39.20 PM.png" id="2_geytc"]
+[ext_resource type="Texture2D" uid="uid://c7epbpjyk8kqu" path="res://images/Placeholders/NavelOrange.webp" id="3_6ryw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrpa5"]
 size = Vector2(274, 273)

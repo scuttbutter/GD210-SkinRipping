@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://34ircjlbc6br"]
 
-[ext_resource type="Texture2D" uid="uid://dldyktyf45onb" path="res://images/HeadNoOuchie.png" id="1_1oxlx"]
+[ext_resource type="Texture2D" uid="uid://dldyktyf45onb" path="res://images/Head/HeadNoOuchie.png" id="1_1oxlx"]
 [ext_resource type="Texture2D" uid="uid://sw0hrbsm1xom" path="res://images/BlackScreen.png" id="1_81i5a"]
 [ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="2_81i5a"]
-[ext_resource type="Texture2D" uid="uid://brshjkdxsjd07" path="res://images/HeadRightSideOuchie.png" id="3_lawnc"]
-[ext_resource type="Texture2D" uid="uid://d3lu6ulyhqq0s" path="res://images/HeadLeftSideOuchie.png" id="4_1oxlx"]
+[ext_resource type="Texture2D" uid="uid://brshjkdxsjd07" path="res://images/Head/HeadRightSideOuchie.png" id="3_lawnc"]
+[ext_resource type="Texture2D" uid="uid://d3lu6ulyhqq0s" path="res://images/Head/HeadLeftSideOuchie.png" id="4_1oxlx"]
 [ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="4_g5u1a"]
+[ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="7_81i5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81i5a"]
 size = Vector2(329.4609, 659.9747)
@@ -14,7 +15,7 @@ size = Vector2(329.4609, 659.9747)
 size = Vector2(329.4609, 659.9747)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc8dv"]
-size = Vector2(1173, 1194)
+size = Vector2(2127.5, 1718)
 
 [node name="Node2D" type="Node2D" unique_id=598877771]
 
@@ -24,14 +25,15 @@ scale = Vector2(2.7109377, 2.7140627)
 texture = ExtResource("1_81i5a")
 
 [node name="Face" type="Sprite2D" parent="." unique_id=702537933 node_paths=PackedStringArray("left_passed_sprite", "right_passed_sprite")]
-position = Vector2(574, 584.139)
-scale = Vector2(1.796875, 1.8227974)
+position = Vector2(567.5, 592.7171)
+scale = Vector2(1.8234376, 1.7959908)
 texture = ExtResource("1_1oxlx")
 script = ExtResource("4_g5u1a")
 idle_texture = ExtResource("1_1oxlx")
 click_texture = ExtResource("1_81i5a")
 left_passed_sprite = NodePath("../LeftSideOuch")
 right_passed_sprite = NodePath("../RightSideOuch")
+trigger_distance = 700.0
 
 [node name="RightSideOuch" type="Sprite2D" parent="." unique_id=1141577373]
 visible = false
@@ -66,8 +68,13 @@ shape = SubResource("RectangleShape2D_1oxlx")
 anchor_mode = 0
 script = ExtResource("2_81i5a")
 
-[node name="Area2D" type="Area2D" parent="Camera2D" unique_id=1713745390]
+[node name="Area2D" type="Area2D" parent="Camera2D" unique_id=1713745390 node_paths=PackedStringArray("camera")]
+script = ExtResource("7_81i5a")
+zoom_threshold = 0.5
+larger_than = false
+scene_to_load = "res://Scenes/Mirror.tscn"
+camera = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1671193421]
-position = Vector2(585, 581)
+position = Vector2(107.75, 319)
 shape = SubResource("RectangleShape2D_fc8dv")
