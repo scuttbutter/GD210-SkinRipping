@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalSceneState="*uid://dhgu3gqchjtxy"
+GameState="*uid://cu48a2gbt0bwo"
 
 [display]
 

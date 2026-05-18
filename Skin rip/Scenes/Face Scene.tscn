@@ -30,10 +30,8 @@ scale = Vector2(1.8234376, 1.7959908)
 texture = ExtResource("1_1oxlx")
 script = ExtResource("4_g5u1a")
 idle_texture = ExtResource("1_1oxlx")
-click_texture = ExtResource("1_81i5a")
 left_passed_sprite = NodePath("../LeftSideOuch")
 right_passed_sprite = NodePath("../RightSideOuch")
-trigger_distance = 700.0
 
 [node name="RightSideOuch" type="Sprite2D" parent="." unique_id=1141577373]
 visible = false
@@ -76,5 +74,5 @@ scene_to_load = "res://Scenes/Mirror.tscn"
 camera = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1671193421]
-position = Vector2(107.75, 319)
+position = Vector2(540, 551)
 shape = SubResource("RectangleShape2D_fc8dv")
