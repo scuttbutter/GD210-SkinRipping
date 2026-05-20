@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3lu6ulyhqq0s" path="res://images/Head/HeadLeftSideOuchie.png" id="4_1oxlx"]
 [ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="4_g5u1a"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="7_81i5a"]
+[ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="8_fc8dv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81i5a"]
 size = Vector2(329.4609, 659.9747)
@@ -30,6 +31,7 @@ scale = Vector2(1.8234376, 1.7959908)
 texture = ExtResource("1_1oxlx")
 script = ExtResource("4_g5u1a")
 idle_texture = ExtResource("1_1oxlx")
+click_texture = ExtResource("1_81i5a")
 left_passed_sprite = NodePath("../LeftSideOuch")
 right_passed_sprite = NodePath("../RightSideOuch")
 
@@ -76,3 +78,7 @@ camera = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1671193421]
 position = Vector2(540, 551)
 shape = SubResource("RectangleShape2D_fc8dv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=968278882]
+stream = ExtResource("8_fc8dv")
+autoplay = true

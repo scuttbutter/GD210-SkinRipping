@@ -3,8 +3,10 @@ extends Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	limit_left = 0
+	limit_top = 0
+	limit_right = 1152
+	limit_bottom = 1152
 
 var zoom_speed = 0.1
 var min_zoom = 1

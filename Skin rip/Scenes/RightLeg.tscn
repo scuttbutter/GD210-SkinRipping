@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://sw0hrbsm1xom" path="res://images/BlackScreen.png" id="1_pli11"]
 [ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_tstp3"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_pli11"]
-[ext_resource type="Texture2D" uid="uid://c8goe0sx7i8fj" path="res://images/NecrolysisLegs (1).png" id="4_j42vl"]
-[ext_resource type="Script" uid="uid://qni6ioa3s0b1" path="res://Scripts/Sprites Scripts/Quad.gd" id="5_tstp3"]
-[ext_resource type="Texture2D" uid="uid://k06sam4e2rs" path="res://images/NecrolysisLegsBottomLeftOuch.png" id="6_j42vl"]
-[ext_resource type="Texture2D" uid="uid://gei42ac0bw6u" path="res://images/NecrolysisLegsBottomRightOuch.png" id="7_44tpw"]
+[ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="4_44tpw"]
+[ext_resource type="Texture2D" uid="uid://c8goe0sx7i8fj" path="res://images/legs/NecrolysisLegs (1).png" id="4_j42vl"]
+[ext_resource type="Script" uid="uid://wxsjfe75bs2i" path="res://Scripts/Sprites Scripts/QuagLegVer.gd" id="6_44tpw"]
+[ext_resource type="Texture2D" uid="uid://k06sam4e2rs" path="res://images/legs/NecrolysisLegsBottomLeftOuch.png" id="6_j42vl"]
+[ext_resource type="Texture2D" uid="uid://gei42ac0bw6u" path="res://images/legs/NecrolysisLegsBottomRightOuch.png" id="7_44tpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j42vl"]
 size = Vector2(2118.045, 2071.584)
@@ -36,15 +37,19 @@ position = Vector2(361.97583, 706.61456)
 scale = Vector2(0.99999976, 0.9999996)
 shape = SubResource("RectangleShape2D_j42vl")
 
-[node name="LegLimbR" type="Sprite2D" parent="." unique_id=631197479 node_paths=PackedStringArray("bottom_left_sprite", "bottom_right_sprite")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera2D/Hitbox" unique_id=905993822]
+stream = ExtResource("4_44tpw")
+autoplay = true
+
+[node name="LegLimbR" type="Sprite2D" parent="." unique_id=631197479 node_paths=PackedStringArray("bottom_left_sprite_leg", "bottom_right_sprite_leg")]
 position = Vector2(622.5, 544.00006)
 scale = Vector2(1.3737487, 1.3481647)
 texture = ExtResource("4_j42vl")
-script = ExtResource("5_tstp3")
+script = ExtResource("6_44tpw")
 idle_texture = ExtResource("4_j42vl")
 click_texture = ExtResource("1_pli11")
-bottom_left_sprite = NodePath("../BottomLeft")
-bottom_right_sprite = NodePath("../BottomRight")
+bottom_left_sprite_leg = NodePath("../BottomLeft")
+bottom_right_sprite_leg = NodePath("../BottomRight")
 
 [node name="BottomLeft" type="Sprite2D" parent="." unique_id=1384684540]
 visible = false

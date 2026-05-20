@@ -51,7 +51,7 @@ func _input(event):
 				if not passed_point:
 					texture = idle_texture
 
-
+	print(passed_point)
 	if event is InputEventMouseMotion and clicked:
 
 		var distance = click_position.distance_to(event.position)
@@ -67,6 +67,7 @@ func _input(event):
 
 				if left_passed_sprite:
 					left_passed_sprite.visible = true
+					passed_point = false
 
 			else:
 
@@ -74,3 +75,4 @@ func _input(event):
 
 				if right_passed_sprite:
 					right_passed_sprite.visible = true
+					passed_point = false

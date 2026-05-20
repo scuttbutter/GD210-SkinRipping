@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b11f5p7litxwa"]
 
-[ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="1_ixni0"]
+[ext_resource type="Script" uid="uid://di2adthkkmiw" path="res://Scripts/Camera2D.gd" id="1_ixni0"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_1um3c"]
 [ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="2_ixni0"]
 [ext_resource type="Texture2D" uid="uid://cxwwxr73etynh" path="res://images/Sketch/LeftArm.png" id="3_ixni0"]
@@ -27,6 +27,9 @@ camera = NodePath("..")
 position = Vector2(341.6504, 745.91315)
 scale = Vector2(0.9999999, 0.99999994)
 shape = SubResource("RectangleShape2D_86apk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera2D/Hitbox" unique_id=155374077]
+autoplay = true
 
 [node name="ArmL" type="Sprite2D" parent="." unique_id=1179682194]
 position = Vector2(579, 576.00006)

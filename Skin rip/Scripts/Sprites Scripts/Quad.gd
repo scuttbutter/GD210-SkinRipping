@@ -110,6 +110,9 @@ func _input(event):
 
 					if top_left_sprite:
 						top_left_sprite.visible = true
+						passed_point = false
+						
+						GameState.top_left_passed = true
 
 
 				"top_right":
@@ -118,6 +121,9 @@ func _input(event):
 
 					if top_right_sprite:
 						top_right_sprite.visible = true
+						passed_point = false
+						
+						GameState.top_right_passed = true
 
 
 				"bottom_left":
@@ -126,6 +132,9 @@ func _input(event):
 
 					if bottom_left_sprite:
 						bottom_left_sprite.visible = true
+						passed_point = false
+						
+						GameState.bottom_left_passed = true
 
 
 				"bottom_right":
@@ -134,3 +143,6 @@ func _input(event):
 
 					if bottom_right_sprite:
 						bottom_right_sprite.visible = true
+						passed_point = false
+						
+						GameState.bottom_right_passed = true

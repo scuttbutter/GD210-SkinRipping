@@ -27,9 +27,16 @@ func _ready():
 	# Hide both sprites initially
 	if top_sprite:
 		top_sprite.visible = false
+		passed_point = false
+		
+		GameState.top_passed =true
 
 	if bottom_sprite:
 		bottom_sprite.visible = false
+		passed_point = false
+		
+		GameState.bottom_passed =true
+
 
 
 func _input(event):

@@ -1,8 +1,50 @@
 [gd_scene format=3 uid="uid://by060e0indie4"]
 
+[ext_resource type="Texture2D" uid="uid://c6keelisp52gp" path="res://images/pixel_art_large (1).png" id="1_c51vb"]
+[ext_resource type="Texture2D" uid="uid://dd1sy60foyg8n" path="res://images/pixel_art_large (4).png" id="1_u0711"]
+[ext_resource type="Script" uid="uid://di2adthkkmiw" path="res://Scripts/Camera2D.gd" id="1_ygsxc"]
+[ext_resource type="Script" uid="uid://dyaa8lepo2u82" path="res://Scripts/StartScreenTitle.gd" id="2_u0711"]
+[ext_resource type="Texture2D" uid="uid://d0koi6p8b82by" path="res://images/pixel_art_large (5).png" id="3_6684v"]
+[ext_resource type="AudioStream" uid="uid://bqwe7dtv4i0dh" path="res://Music/Necrolysis Title Screen loopable.wav" id="3_qh38r"]
+[ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="6_6684v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygsxc"]
+size = Vector2(2721.8728, 664.85077)
+
 [node name="Node2D" type="Node2D" unique_id=1806482479]
 
-[node name="Button" type="Button" parent="." unique_id=1683336495]
-offset_left = -8.0
-offset_top = -8.0
-metadata/_edit_use_anchors_ = true
+[node name="Camera2D" type="Camera2D" parent="." unique_id=549753171]
+scale = Vector2(0.3776882, 0.3776882)
+anchor_mode = 0
+script = ExtResource("1_ygsxc")
+
+[node name="background" type="Sprite2D" parent="." unique_id=402843992]
+position = Vector2(596, 631)
+scale = Vector2(1.1520402, 1.1220273)
+texture = ExtResource("1_u0711")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1899345656]
+position = Vector2(582.65216, 469.49997)
+scale = Vector2(0.47222233, 0.47222233)
+texture = ExtResource("1_c51vb")
+script = ExtResource("2_u0711")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=900117724]
+stream = ExtResource("3_qh38r")
+autoplay = true
+
+[node name="direction" type="Sprite2D" parent="." unique_id=971373220]
+position = Vector2(567.99994, 781)
+scale = Vector2(0.41735974, 0.3895609)
+texture = ExtResource("3_6684v")
+script = ExtResource("2_u0711")
+
+[node name="Area2D" type="Area2D" parent="direction" unique_id=506509986 node_paths=PackedStringArray("camera")]
+script = ExtResource("6_6684v")
+scene_to_load = "res://Scenes/Mirror.tscn"
+camera = NodePath("../../Camera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="direction/Area2D" unique_id=275535577]
+position = Vector2(38.337036, -55.190308)
+scale = Vector2(1.0000002, 1.0000007)
+shape = SubResource("RectangleShape2D_ygsxc")

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdx1gtyh23fjs" path="res://images/Torso/NecrolysisTorsoNoOuch.png" id="4_akk1o"]
 [ext_resource type="Texture2D" uid="uid://cryma64ptqkkp" path="res://images/Torso/NecrolysisTorsoTopRightOuch.png" id="6_tbixf"]
 [ext_resource type="Texture2D" uid="uid://b6htotb4jf5c" path="res://images/Torso/NecrolysisTorsoTopLeftOuch.png" id="7_nagtj"]
+[ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="8_akk1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4b6n"]
 size = Vector2(7989.9717, 6650.6177)
@@ -57,3 +58,7 @@ texture = ExtResource("6_tbixf")
 position = Vector2(580, 576)
 scale = Vector2(1.9965278, 1.9965278)
 texture = ExtResource("7_nagtj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1741268524]
+stream = ExtResource("8_akk1o")
+autoplay = true
