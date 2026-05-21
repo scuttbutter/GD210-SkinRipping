@@ -12,6 +12,12 @@ extends Node2D
 @export var top_sprite: Sprite2D
 @export var bottom_sprite: Sprite2D
 
+@export var top_left_sprite_leg :Sprite2D
+@export var top_right_sprite_leg : Sprite2D
+@export var bottom_left_sprite_leg : Sprite2D
+@export var bottom_right_sprite_leg : Sprite2D
+
+
 func _process(delta):
 
 	# Existing
@@ -34,3 +40,24 @@ func _process(delta):
 
 	if bottom_right_sprite:
 		bottom_right_sprite.visible = GameState.bottom_right_passed
+		
+		
+	if top_sprite:
+		top_sprite.visible = GameState.top_passed
+
+	if bottom_sprite:
+		bottom_sprite.visible = GameState.bottom_passed
+		
+		
+		
+	if top_left_sprite_leg:
+		top_left_sprite_leg.visible = GameState.top_left_leg_passed
+
+	if top_right_sprite_leg:
+		top_right_sprite_leg.visible = GameState.top_right_leg_passed
+
+	if bottom_left_sprite_leg:
+		bottom_left_sprite_leg.visible = GameState.bottom_left_leg_passed
+
+	if bottom_right_sprite_leg:
+		bottom_right_sprite_leg.visible = GameState.bottom_right_leg_passed

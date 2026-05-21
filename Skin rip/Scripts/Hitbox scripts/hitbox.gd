@@ -29,6 +29,7 @@ func _process(delta):
 	
 	print(camera.zoom.x)
 	
+
 	if larger_than:
 		if camera.zoom.x >= zoom_threshold:
 			get_tree().change_scene_to_file(scene_to_load)

@@ -10,6 +10,11 @@ extends Sprite2D
 
 @export var trigger_distance := 150.0
 
+@onready var bg_music = $BGMusic
+@onready var bg_music_2 = $BGMusic2
+@onready var click_sound = $ClickSound
+
+
 var clicked := false
 var passed_point := false
 var clicked_quadrant := ""
@@ -19,6 +24,7 @@ var click_position := Vector2.ZERO
 func _ready():
 
 	texture = idle_texture
+	bg_music.play()
 
 	# Hide all first
 	hide_sprite(top_left_sprite_leg)
@@ -82,6 +88,7 @@ func _input(event):
 
 				if not passed_point:
 					texture = click_texture
+					fade_out_music()
 
 			elif not event.pressed:
 
@@ -98,7 +105,9 @@ func _input(event):
 		if not passed_point and distance >= trigger_distance:
 
 			passed_point = true
-			texture = idle_texture
+			texture = click_texture
+			
+			await _handle_quadrant_success()
 
 			var gs = get_node("/root/GameState")
 
@@ -128,7 +137,7 @@ func _input(event):
 
 				"bottom_left":
 
-					gs.bottom_left_passed = true
+					gs.bottom_left_leg_passed = true
 
 					if bottom_left_sprite_leg:
 						bottom_left_sprite_leg.visible = true
@@ -146,3 +155,20 @@ func _input(event):
 						passed_point = false
 						
 						GameState.bottom_right_leg_passed = true
+
+
+func _handle_quadrant_success():
+
+	click_sound.play()
+	await click_sound.finished
+
+	bg_music_2.play()
+
+	texture = idle_texture
+
+
+func fade_out_music():
+
+	var tween = create_tween()
+	tween.tween_property(bg_music, "volume_db", -80, 1.0)
+	tween.tween_callback(bg_music.stop)

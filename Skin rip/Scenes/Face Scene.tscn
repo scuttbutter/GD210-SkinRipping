@@ -3,82 +3,75 @@
 [ext_resource type="Texture2D" uid="uid://dldyktyf45onb" path="res://images/Head/HeadNoOuchie.png" id="1_1oxlx"]
 [ext_resource type="Texture2D" uid="uid://sw0hrbsm1xom" path="res://images/BlackScreen.png" id="1_81i5a"]
 [ext_resource type="Script" uid="uid://cwervxwcifwnk" path="res://Scripts/CameraZoomOut.gd" id="2_81i5a"]
-[ext_resource type="Texture2D" uid="uid://brshjkdxsjd07" path="res://images/Head/HeadRightSideOuchie.png" id="3_lawnc"]
 [ext_resource type="Texture2D" uid="uid://d3lu6ulyhqq0s" path="res://images/Head/HeadLeftSideOuchie.png" id="4_1oxlx"]
+[ext_resource type="AudioStream" uid="uid://bk6c3mt7hv5l3" path="res://Music/Necrolysis Phase 1 loopable.wav" id="4_avnl6"]
 [ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="4_g5u1a"]
+[ext_resource type="AudioStream" uid="uid://bpxb1eny2ttdi" path="res://Music/wet-tearing-meat-sound-effect-cqzipu.wav" id="5_g5u1a"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="7_81i5a"]
 [ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="8_fc8dv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81i5a"]
-size = Vector2(329.4609, 659.9747)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g5u1a"]
+load_path = "res://.godot/imported/HeadRightSideOuchie.png-6a4fe352c304319e03180e54a21613d3.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oxlx"]
-size = Vector2(329.4609, 659.9747)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc8dv"]
-size = Vector2(2127.5, 1718)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5u1a"]
+size = Vector2(1498.096, 1250.562)
 
 [node name="Node2D" type="Node2D" unique_id=598877771]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=306427054]
+[node name="background" type="Sprite2D" parent="." unique_id=306427054]
 position = Vector2(614.5001, 658.50006)
 scale = Vector2(2.7109377, 2.7140627)
 texture = ExtResource("1_81i5a")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1106410161]
+anchor_mode = 0
+editor_draw_limits = true
+script = ExtResource("2_81i5a")
+
 [node name="Face" type="Sprite2D" parent="." unique_id=702537933 node_paths=PackedStringArray("left_passed_sprite", "right_passed_sprite")]
-position = Vector2(567.5, 592.7171)
-scale = Vector2(1.8234376, 1.7959908)
+position = Vector2(585.5, 610.44617)
+scale = Vector2(1.8796874, 1.851394)
 texture = ExtResource("1_1oxlx")
 script = ExtResource("4_g5u1a")
 idle_texture = ExtResource("1_1oxlx")
 click_texture = ExtResource("1_81i5a")
-left_passed_sprite = NodePath("../LeftSideOuch")
-right_passed_sprite = NodePath("../RightSideOuch")
+left_passed_sprite = NodePath("RightSideOuch/LeftSideOuch")
+right_passed_sprite = NodePath("RightSideOuch")
 
-[node name="RightSideOuch" type="Sprite2D" parent="." unique_id=1141577373]
+[node name="RightSideOuch" type="Sprite2D" parent="Face" unique_id=1141577373]
 visible = false
-position = Vector2(574, 584.139)
-scale = Vector2(1.796875, 1.8227974)
-texture = ExtResource("3_lawnc")
+position = Vector2(3.5646973, -4.776245)
+scale = Vector2(0.9854328, 1.014926)
+texture = SubResource("CompressedTexture2D_g5u1a")
 
-[node name="Area2D" type="Area2D" parent="RightSideOuch" unique_id=1811439821]
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSideOuch/Area2D" unique_id=2046792788]
-position = Vector2(162.50436, -6.9337463)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_81i5a")
-
-[node name="LeftSideOuch" type="Sprite2D" parent="." unique_id=1986658011]
+[node name="LeftSideOuch" type="Sprite2D" parent="Face/RightSideOuch" unique_id=1986658011]
 visible = false
-position = Vector2(575.50006, 583.5)
-scale = Vector2(1.7984372, 1.8296874)
+position = Vector2(0.83483887, -0.35058594)
+scale = Vector2(1.0008693, 1.0037798)
 texture = ExtResource("4_1oxlx")
 
-[node name="Area2D2" type="Area2D" parent="LeftSideOuch" unique_id=844364825]
-position = Vector2(-0.83410645, 0.34921265)
-scale = Vector2(0.99913126, 0.99623436)
+[node name="BGMusic" type="AudioStreamPlayer" parent="Face" unique_id=968278882]
+stream = ExtResource("4_avnl6")
+autoplay = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSideOuch/Area2D2" unique_id=443664016]
-position = Vector2(-164.73044, -7.7566967)
-scale = Vector2(0.99999976, 0.99999976)
-shape = SubResource("RectangleShape2D_1oxlx")
+[node name="BGMusic2" type="AudioStreamPlayer" parent="Face" unique_id=956613514]
+stream = ExtResource("8_fc8dv")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1106410161]
-anchor_mode = 0
-script = ExtResource("2_81i5a")
+[node name="ClickSound" type="AudioStreamPlayer" parent="Face" unique_id=1101500966]
+stream = ExtResource("5_g5u1a")
 
-[node name="Area2D" type="Area2D" parent="Camera2D" unique_id=1713745390 node_paths=PackedStringArray("camera")]
+[node name="Area2D" type="Area2D" parent="Face" unique_id=612181725 node_paths=PackedStringArray("camera")]
+scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("7_81i5a")
-zoom_threshold = 0.5
+zoom_threshold = 0.9
 larger_than = false
 scene_to_load = "res://Scenes/Mirror.tscn"
-camera = NodePath("..")
+camera = NodePath("../../Camera2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1671193421]
-position = Vector2(540, 551)
-shape = SubResource("RectangleShape2D_fc8dv")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Face/Area2D" unique_id=1805547863]
+position = Vector2(-18.873566, 33.008514)
+scale = Vector2(1.0000002, 1.0000007)
+shape = SubResource("RectangleShape2D_g5u1a")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=968278882]
-stream = ExtResource("8_fc8dv")
-autoplay = true
+[node name="TempCover" type="Sprite2D" parent="." unique_id=1572215926]
+texture = ExtResource("1_81i5a")

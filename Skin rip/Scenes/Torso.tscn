@@ -5,9 +5,13 @@
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_6cm4w"]
 [ext_resource type="Script" uid="uid://qni6ioa3s0b1" path="res://Scripts/Sprites Scripts/Quad.gd" id="4_0his3"]
 [ext_resource type="Texture2D" uid="uid://bdx1gtyh23fjs" path="res://images/Torso/NecrolysisTorsoNoOuch.png" id="4_akk1o"]
+[ext_resource type="AudioStream" uid="uid://bk6c3mt7hv5l3" path="res://Music/Necrolysis Phase 1 loopable.wav" id="6_ddako"]
 [ext_resource type="Texture2D" uid="uid://cryma64ptqkkp" path="res://images/Torso/NecrolysisTorsoTopRightOuch.png" id="6_tbixf"]
+[ext_resource type="Texture2D" uid="uid://ba14iqfe5a6bi" path="res://images/Torso/NecrolysisTorsoBottomLeftOuch.png" id="7_c6d21"]
 [ext_resource type="Texture2D" uid="uid://b6htotb4jf5c" path="res://images/Torso/NecrolysisTorsoTopLeftOuch.png" id="7_nagtj"]
 [ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="8_akk1o"]
+[ext_resource type="AudioStream" uid="uid://bpxb1eny2ttdi" path="res://Music/wet-tearing-meat-sound-effect-cqzipu.wav" id="8_opt3v"]
+[ext_resource type="Texture2D" uid="uid://bvtc0fyykjdc7" path="res://images/Torso/NecrolysisTorsoBottomRightOuch.png" id="10_ddako"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4b6n"]
 size = Vector2(7989.9717, 6650.6177)
@@ -19,46 +23,69 @@ position = Vector2(606.99994, 505)
 scale = Vector2(2.6140625, 2.4484375)
 texture = ExtResource("1_0his3")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=910665700 node_paths=PackedStringArray("camera")]
-modulate = Color(1, 0.78039217, 1, 1)
-position = Vector2(581.5, 447.5)
-scale = Vector2(0.40250462, 0.43394467)
-script = ExtResource("2_6cm4w")
-zoom_threshold = 0.5
-larger_than = false
-scene_to_load = "res://Scenes/Mirror.tscn"
-camera = NodePath("../Camera2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=705050859]
-position = Vector2(3.7268066, 300.7296)
-scale = Vector2(0.9999998, 1)
-shape = SubResource("RectangleShape2D_v4b6n")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2130939375]
 position = Vector2(-6.1035156e-05, -2)
 scale = Vector2(0.40250462, 0.43394467)
 anchor_mode = 0
 script = ExtResource("1_jxcct")
 
-[node name="UpperTorso" type="Sprite2D" parent="." unique_id=674808164 node_paths=PackedStringArray("top_left_sprite", "top_right_sprite")]
+[node name="UpperTorso" type="Sprite2D" parent="." unique_id=674808164 node_paths=PackedStringArray("top_left_sprite", "top_right_sprite", "bottom_left_sprite", "bottom_right_sprite")]
 position = Vector2(580.99994, 579.5043)
 scale = Vector2(2.0138886, 2.0156367)
 texture = ExtResource("4_akk1o")
 script = ExtResource("4_0his3")
 idle_texture = ExtResource("4_akk1o")
-top_left_sprite = NodePath("../TopLeftOuch")
-top_right_sprite = NodePath("../TopRightOuch")
+click_texture = ExtResource("1_0his3")
+top_left_sprite = NodePath("TopLeftOuch")
+top_right_sprite = NodePath("TopRightOuch")
+bottom_left_sprite = NodePath("BottomLeft")
+bottom_right_sprite = NodePath("BottomRight")
 
-[node name="TopRightOuch" type="Sprite2D" parent="." unique_id=133532190]
-position = Vector2(578.5, 576.5)
-scale = Vector2(2.0017362, 1.9982638)
+[node name="BGMusic" type="AudioStreamPlayer" parent="UpperTorso" unique_id=1835941807]
+stream = ExtResource("6_ddako")
+autoplay = true
+
+[node name="BGMusic2" type="AudioStreamPlayer" parent="UpperTorso" unique_id=395998362]
+stream = ExtResource("8_akk1o")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="UpperTorso" unique_id=1530011491]
+stream = ExtResource("8_opt3v")
+
+[node name="TopRightOuch" type="Sprite2D" parent="UpperTorso" unique_id=133532190]
+visible = false
+position = Vector2(-1.2413635, -1.4904785)
+scale = Vector2(0.99396574, 0.991381)
 texture = ExtResource("6_tbixf")
 
-[node name="TopLeftOuch" type="Sprite2D" parent="." unique_id=647947882]
-position = Vector2(580, 576)
-scale = Vector2(1.9965278, 1.9965278)
+[node name="BottomLeft" type="Sprite2D" parent="UpperTorso" unique_id=985548717]
+visible = false
+position = Vector2(-2.9792786, -2.2346497)
+scale = Vector2(0.4965518, 0.49612117)
+texture = ExtResource("7_c6d21")
+
+[node name="TopLeftOuch" type="Sprite2D" parent="UpperTorso" unique_id=647947882]
+visible = false
+position = Vector2(-0.496521, -1.7385254)
+scale = Vector2(0.9913795, 0.9905197)
 texture = ExtResource("7_nagtj")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1741268524]
-stream = ExtResource("8_akk1o")
-autoplay = true
+[node name="BottomRight" type="Sprite2D" parent="UpperTorso" unique_id=1214181024]
+visible = false
+position = Vector2(0.49658203, -1.7385254)
+scale = Vector2(0.4965518, 0.49612117)
+texture = ExtResource("10_ddako")
+
+[node name="Hitbox" type="Area2D" parent="UpperTorso" unique_id=910665700 node_paths=PackedStringArray("camera")]
+modulate = Color(1, 0.78039217, 1, 1)
+position = Vector2(0.2482605, -65.49011)
+scale = Vector2(0.19986442, 0.21528913)
+script = ExtResource("2_6cm4w")
+zoom_threshold = 0.9
+larger_than = false
+scene_to_load = "res://Scenes/Mirror.tscn"
+camera = NodePath("../../Camera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperTorso/Hitbox" unique_id=705050859]
+position = Vector2(3.7268066, 300.7296)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_v4b6n")
