@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx01jeitb3q1c"
-path="res://.godot/imported/mirrorspritebottomleftleg.png-96190032bc555aba6e84dd90f62c2328.ctex"
+uid="uid://bs6iu5led446j"
+path="res://.godot/imported/top.png-97dccfb6d549914da51503d0d2f62161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/mirrorspritebottomleftleg.png"
-dest_files=["res://.godot/imported/mirrorspritebottomleftleg.png-96190032bc555aba6e84dd90f62c2328.ctex"]
+source_file="res://images/MirrorOuch/top.png"
+dest_files=["res://.godot/imported/top.png-97dccfb6d549914da51503d0d2f62161.ctex"]
 
 [params]
 

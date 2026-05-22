@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2e3n0kckfdxa"
-path="res://.godot/imported/mirrorsprite (1).png-632003ca6832c744264b249dbfc20562.ctex"
+uid="uid://sk6t0snjtirp"
+path="res://.godot/imported/mirrorspritebottomrightleg.png-20fa6c711b3b01a7d8aa49be40b65507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/mirrorsprite (1).png"
-dest_files=["res://.godot/imported/mirrorsprite (1).png-632003ca6832c744264b249dbfc20562.ctex"]
+source_file="res://images/MirrorOuch/mirrorspritebottomrightleg.png"
+dest_files=["res://.godot/imported/mirrorspritebottomrightleg.png-20fa6c711b3b01a7d8aa49be40b65507.ctex"]
 
 [params]
 

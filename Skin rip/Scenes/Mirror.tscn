@@ -9,9 +9,16 @@
 [ext_resource type="AudioStream" uid="uid://dvp7nffskyfh5" path="res://Music/Necrolysis Main Theme loopable.wav" id="4_vxvis"]
 [ext_resource type="AudioStream" uid="uid://bk6c3mt7hv5l3" path="res://Music/Necrolysis Phase 1 loopable.wav" id="5_8g64w"]
 [ext_resource type="Texture2D" uid="uid://b3fx4jqw748sg" path="res://images/Placeholders/orange.jpg" id="6_wr76s"]
-[ext_resource type="Texture2D" uid="uid://c2e3n0kckfdxa" path="res://images/mirrorsprite (1).png" id="7_ba3x7"]
-[ext_resource type="Texture2D" uid="uid://sk6t0snjtirp" path="res://images/mirrorspritebottomrightleg.png" id="7_ysjm3"]
-[ext_resource type="Texture2D" uid="uid://cx01jeitb3q1c" path="res://images/mirrorspritebottomleftleg.png" id="8_tv3kx"]
+[ext_resource type="Texture2D" uid="uid://c2e3n0kckfdxa" path="res://images/MirrorOuch/mirrorsprite (1).png" id="7_ba3x7"]
+[ext_resource type="Texture2D" uid="uid://sk6t0snjtirp" path="res://images/MirrorOuch/mirrorspritebottomrightleg.png" id="7_ysjm3"]
+[ext_resource type="Texture2D" uid="uid://cx01jeitb3q1c" path="res://images/MirrorOuch/mirrorspritebottomleftleg.png" id="8_tv3kx"]
+[ext_resource type="Texture2D" uid="uid://bllla4l3ciwjo" path="res://images/MirrorOuch/BottomRightTorso.png" id="13_bkmqt"]
+[ext_resource type="Texture2D" uid="uid://dgev2llcpvo4m" path="res://images/MirrorOuch/Left.png" id="14_jv4hg"]
+[ext_resource type="Texture2D" uid="uid://bgit41qo01udr" path="res://images/MirrorOuch/Right.png" id="15_ygi67"]
+[ext_resource type="Texture2D" uid="uid://eet0xvd2y4ay" path="res://images/MirrorOuch/BottomLeftTorso.png" id="16_q2rax"]
+[ext_resource type="Texture2D" uid="uid://d2o730vfpou5t" path="res://images/MirrorOuch/TopRightTorso.png" id="17_ygi67"]
+[ext_resource type="Texture2D" uid="uid://di1lxjymcw4eb" path="res://images/MirrorOuch/TopLeftTorso (1).png" id="18_q2rax"]
+[ext_resource type="Texture2D" uid="uid://bs6iu5led446j" path="res://images/MirrorOuch/top.png" id="19_q2rax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgb2t"]
 size = Vector2(72.98898, 86.308365)
@@ -45,7 +52,7 @@ position = Vector2(596, 631)
 scale = Vector2(1.1520402, 1.1220273)
 texture = ExtResource("2_ox6id")
 
-[node name="Fullbody (MainSprite)" type="Sprite2D" parent="." unique_id=208938966 node_paths=PackedStringArray("left_sprite", "right_sprite", "top_left_sprite", "top_right_sprite", "bottom_left_sprite", "bottom_right_sprite", "bottom_left_sprite_leg", "bottom_right_sprite_leg")]
+[node name="Fullbody (MainSprite)" type="Sprite2D" parent="." unique_id=208938966 node_paths=PackedStringArray("left_sprite", "right_sprite", "top_left_sprite", "top_right_sprite", "bottom_left_sprite", "bottom_right_sprite", "top_sprite", "bottom_left_sprite_leg", "bottom_right_sprite_leg")]
 position = Vector2(597, 602)
 scale = Vector2(1.1770833, 1.1770836)
 texture = ExtResource("7_ba3x7")
@@ -53,14 +60,14 @@ script = ExtResource("4_8g64w")
 left_sprite = NodePath("../L")
 right_sprite = NodePath("../R")
 top_left_sprite = NodePath("../Tl")
-top_right_sprite = NodePath("../Tl/TR")
-bottom_left_sprite = NodePath("../Tl/BL")
+top_right_sprite = NodePath("../TR")
+bottom_left_sprite = NodePath("../BL")
 bottom_right_sprite = NodePath("../BR")
+top_sprite = NodePath("../T")
 bottom_left_sprite_leg = NodePath("../BLLEG")
 bottom_right_sprite_leg = NodePath("../BRLEG")
 
 [node name="Hitbox" type="Area2D" parent="Fullbody (MainSprite)" unique_id=2048599150 node_paths=PackedStringArray("camera")]
-visible = false
 position = Vector2(4.9976807, -485.92398)
 scale = Vector2(1.6727692, 1.424997)
 script = ExtResource("3_bowxg")
@@ -73,7 +80,6 @@ position = Vector2(-28.381422, 148.43326)
 shape = SubResource("RectangleShape2D_sgb2t")
 
 [node name="Hitbox1" type="Area2D" parent="Fullbody (MainSprite)" unique_id=1693493986 node_paths=PackedStringArray("camera")]
-visible = false
 modulate = Color(0.9038905, 0.0006599689, 0.90458554, 1)
 self_modulate = Color(0.9221596, 0.00070540427, 0.92451155, 1)
 position = Vector2(8.768311, -259.3495)
@@ -88,7 +94,6 @@ scale = Vector2(1.0000004, 1.0000002)
 shape = SubResource("RectangleShape2D_aqyhw")
 
 [node name="Hitbox3" type="Area2D" parent="Fullbody (MainSprite)" unique_id=867161779 node_paths=PackedStringArray("camera")]
-visible = false
 position = Vector2(-177.16724, -175.27466)
 scale = Vector2(1.6750953, 1.424997)
 script = ExtResource("3_bowxg")
@@ -101,7 +106,6 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_c1o4b")
 
 [node name="Hitbox6" type="Area2D" parent="Fullbody (MainSprite)" unique_id=1578733531 node_paths=PackedStringArray("camera")]
-visible = false
 position = Vector2(112.62421, 156.74963)
 scale = Vector2(1.6750953, 1.424997)
 script = ExtResource("3_bowxg")
@@ -132,23 +136,33 @@ texture = ExtResource("8_tv3kx")
 [node name="BR" type="Sprite2D" parent="." unique_id=1462392894]
 position = Vector2(597, 602)
 scale = Vector2(1.1770833, 1.1770836)
+texture = ExtResource("13_bkmqt")
 
 [node name="L" type="Sprite2D" parent="." unique_id=900920704]
 position = Vector2(593, 588)
 scale = Vector2(1.1297743, 1.1243383)
+texture = ExtResource("14_jv4hg")
 
 [node name="R" type="Sprite2D" parent="." unique_id=1092321475]
 position = Vector2(596.625, 602.87494)
 scale = Vector2(1.1777345, 1.1803385)
+texture = ExtResource("15_ygi67")
+
+[node name="BL" type="Sprite2D" parent="." unique_id=143196581]
+position = Vector2(596.625, 602.875)
+scale = Vector2(1.1777344, 1.1803384)
+texture = ExtResource("16_q2rax")
+
+[node name="TR" type="Sprite2D" parent="." unique_id=87809005]
+position = Vector2(596.625, 602.875)
+scale = Vector2(1.1777344, 1.1803384)
+texture = ExtResource("17_ygi67")
 
 [node name="Tl" type="Sprite2D" parent="." unique_id=974597442]
 position = Vector2(596.625, 602.87494)
 scale = Vector2(1.1777345, 1.1803385)
+texture = ExtResource("18_q2rax")
 
-[node name="TR" type="Sprite2D" parent="Tl" unique_id=87809005]
-position = Vector2(0, 6.1035156e-05)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="BL" type="Sprite2D" parent="Tl" unique_id=143196581]
-position = Vector2(0, 6.1035156e-05)
-scale = Vector2(0.99999994, 0.99999994)
+[node name="T" type="Sprite2D" parent="." unique_id=12361993]
+position = Vector2(575, 569)
+texture = ExtResource("19_q2rax")

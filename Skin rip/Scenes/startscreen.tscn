@@ -9,13 +9,13 @@
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="6_6684v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygsxc"]
-size = Vector2(1612.5173, 410.71863)
+size = Vector2(2635.6157, 1167.9802)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ygsxc"]
 load_path = "res://.godot/imported/Untitled_Artwork 28.png-6cf45b0297708036d0f1b2314e668772.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sevpx"]
-size = Vector2(1066.8776, 373.95468)
+size = Vector2(1285.6244, 373.95468)
 
 [node name="Node2D" type="Node2D" unique_id=1806482479]
 
@@ -51,8 +51,8 @@ scene_to_load = "res://Scenes/Mirror.tscn"
 camera = NodePath("../../Camera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="direction/Area2D" unique_id=275535577]
-position = Vector2(25.158325, -69.30884)
-scale = Vector2(1.0000002, 1.0000012)
+position = Vector2(23.960327, -447.94006)
+scale = Vector2(1.0000002, 1.0000015)
 shape = SubResource("RectangleShape2D_ygsxc")
 
 [node name="credits" type="Sprite2D" parent="." unique_id=955121500]
@@ -68,6 +68,6 @@ scene_to_load = "res://Scenes/Credits.tscn"
 camera = NodePath("../../Camera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="credits/Area2D" unique_id=1712661790]
-position = Vector2(1298.8296, -959.9844)
+position = Vector2(1307.8833, -959.9844)
 scale = Vector2(1.0000002, 1.0000007)
 shape = SubResource("RectangleShape2D_sevpx")

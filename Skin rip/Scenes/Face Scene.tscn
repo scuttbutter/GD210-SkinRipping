@@ -74,4 +74,5 @@ scale = Vector2(1.0000002, 1.0000007)
 shape = SubResource("RectangleShape2D_g5u1a")
 
 [node name="TempCover" type="Sprite2D" parent="." unique_id=1572215926]
+visible = false
 texture = ExtResource("1_81i5a")

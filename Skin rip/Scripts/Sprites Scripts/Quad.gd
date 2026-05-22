@@ -94,6 +94,7 @@ func _input(event):
 
 			passed_point = true
 			texture = click_texture
+			self.visible = false
 
 			await _handle_quadrant_success()
 
@@ -134,6 +135,7 @@ func _handle_quadrant_success():
 	bg_music_2.play()
 
 	texture = idle_texture
+	self.visible = true
 
 
 func fade_out_music():

@@ -67,6 +67,7 @@ func _input(event):
 		if not passed_point and distance >= trigger_distance:
 
 			passed_point = true
+			self.visible = false
 			texture = click_texture
 
 			click_sound.play()
@@ -74,6 +75,8 @@ func _input(event):
 
 			bg_music_2.play()
 			texture = idle_texture
+			self.visiible = true
+			
 
 			if clicked_top_side:
 

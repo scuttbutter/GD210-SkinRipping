@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://di2adthkkmiw" path="res://Scripts/Camera2D.gd" id="1_ixni0"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="2_1um3c"]
-[ext_resource type="Script" uid="uid://bhlw7aaytndt3" path="res://Scripts/Sprites Scripts/HalfVertical.gd" id="2_ixni0"]
-[ext_resource type="Texture2D" uid="uid://cxwwxr73etynh" path="res://images/Sketch/LeftArm.png" id="3_ixni0"]
+[ext_resource type="Texture2D" uid="uid://22vq8l4ljjg6" path="res://images/NecrolysisArm.png" id="3_yxwmx"]
+[ext_resource type="Script" uid="uid://cq8i4sin3ydgk" path="res://Scripts/Sprites Scripts/HalfHorizontal.gd" id="4_bo3bk"]
+[ext_resource type="Texture2D" uid="uid://sw0hrbsm1xom" path="res://images/BlackScreen.png" id="5_dhio6"]
+[ext_resource type="Texture2D" uid="uid://ceuiu36q6svib" path="res://images/ArmBottom.png" id="6_fi6s8"]
+[ext_resource type="Texture2D" uid="uid://vu2k5nck8wcl" path="res://images/ArmTop.png" id="7_tn5j6"]
+[ext_resource type="AudioStream" uid="uid://bk6c3mt7hv5l3" path="res://Music/Necrolysis Phase 1 loopable.wav" id="8_dqnbp"]
+[ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="9_g3sqd"]
+[ext_resource type="AudioStream" uid="uid://bpxb1eny2ttdi" path="res://Music/wet-tearing-meat-sound-effect-cqzipu.wav" id="10_lx70h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86apk"]
 size = Vector2(689.2763, 809.8264)
 
 [node name="Node2D" type="Node2D" unique_id=463090887]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1061442082]
+position = Vector2(639.35693, 520.9448)
+scale = Vector2(4.0051346, 3.6251724)
+texture = ExtResource("5_dhio6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1713185254]
 anchor_mode = 0
@@ -31,8 +42,29 @@ shape = SubResource("RectangleShape2D_86apk")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera2D/Hitbox" unique_id=155374077]
 autoplay = true
 
-[node name="ArmL" type="Sprite2D" parent="." unique_id=1179682194]
-position = Vector2(579, 576.00006)
-scale = Vector2(0.9947916, 1.0000001)
-texture = ExtResource("3_ixni0")
-script = ExtResource("2_ixni0")
+[node name="ArmL" type="Sprite2D" parent="." unique_id=1179682194 node_paths=PackedStringArray("top_passed_sprite", "bottom_passed_sprite")]
+position = Vector2(577.00006, 575.00006)
+scale = Vector2(0.65772015, 0.6611638)
+texture = ExtResource("3_yxwmx")
+script = ExtResource("4_bo3bk")
+idle_texture = ExtResource("3_yxwmx")
+click_texture = ExtResource("5_dhio6")
+top_passed_sprite = NodePath("top")
+bottom_passed_sprite = NodePath("Bottom")
+
+[node name="Bottom" type="Sprite2D" parent="ArmL" unique_id=794983791]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_fi6s8")
+
+[node name="top" type="Sprite2D" parent="ArmL" unique_id=957945991]
+texture = ExtResource("7_tn5j6")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="ArmL" unique_id=80923461]
+stream = ExtResource("8_dqnbp")
+autoplay = true
+
+[node name="BGMusic2" type="AudioStreamPlayer" parent="ArmL" unique_id=729389275]
+stream = ExtResource("9_g3sqd")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="ArmL" unique_id=2103730191]
+stream = ExtResource("10_lx70h")
