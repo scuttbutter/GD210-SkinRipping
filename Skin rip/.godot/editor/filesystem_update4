@@ -1,0 +1,27 @@
+res://Scenes/Face Scene.tscn
+res://Scripts/Gamestate.gd
+res://Scripts/Sprites Scripts/HalfVertical.gd
+res://Gamestate.gd
+res://GameState.gd
+res://Scripts/Sprites Scripts/Quad.gd
+res://Scenes/Mirror.tscn
+res://Scenes/startscreen.tscn
+res://Scenes/StartScreenTitle.gd
+res://Scripts/StartScreenTitle.gd
+res://Scripts/Camera2D.gd
+res://Scripts/CameraZoomOut.gd
+res://Scenes/Torso.tscn
+res://Scenes/RightLeg.tscn
+res://Scenes/LeftArm.tscn
+res://Scenes/MusicManager.gd
+res://Scenes/fullbody_(main_sprite).gd
+res://Scripts/GameState.gd
+res://Scripts/Sprites Scripts/HalfHorizontal.gd
+res://Scripts/Sprites Scripts/QuagLegVer.gd
+res://Scenes/Credits.tscn
+res://Scripts/fullbody_(main_sprite).gd
+res://Scripts/Hitbox scripts/hitbox.gd
+res://AudioManager.gd
+res://Scenes/audio_stream_player.gd
+res://Scripts/AudioManager.gd
+res://Scripts/audio_stream_player.gd
