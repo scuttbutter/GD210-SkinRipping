@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://c2e3n0kckfdxa" path="res://images/MirrorOuch/mirrorsprite (1).png" id="7_ba3x7"]
 [ext_resource type="Texture2D" uid="uid://sk6t0snjtirp" path="res://images/MirrorOuch/mirrorspritebottomrightleg.png" id="7_ysjm3"]
 [ext_resource type="Texture2D" uid="uid://cx01jeitb3q1c" path="res://images/MirrorOuch/mirrorspritebottomleftleg.png" id="8_tv3kx"]
+[ext_resource type="Texture2D" uid="uid://ds1rq3atgxxh3" path="res://images/MirrorOuch/TopLeftLeg.png" id="10_510ep"]
+[ext_resource type="Texture2D" uid="uid://ck2sj45rypfld" path="res://images/MirrorOuch/TopRightLeg.png" id="11_6kfk5"]
 [ext_resource type="Texture2D" uid="uid://bllla4l3ciwjo" path="res://images/MirrorOuch/BottomRightTorso.png" id="13_bkmqt"]
+[ext_resource type="Texture2D" uid="uid://ck0jtgivepei6" path="res://images/MirrorOuch/Bottom.png" id="13_htas3"]
 [ext_resource type="Texture2D" uid="uid://dgev2llcpvo4m" path="res://images/MirrorOuch/Left.png" id="14_jv4hg"]
 [ext_resource type="Texture2D" uid="uid://bgit41qo01udr" path="res://images/MirrorOuch/Right.png" id="15_ygi67"]
 [ext_resource type="Texture2D" uid="uid://eet0xvd2y4ay" path="res://images/MirrorOuch/BottomLeftTorso.png" id="16_q2rax"]
@@ -52,7 +55,7 @@ position = Vector2(596, 631)
 scale = Vector2(1.1520402, 1.1220273)
 texture = ExtResource("2_ox6id")
 
-[node name="Fullbody (MainSprite)" type="Sprite2D" parent="." unique_id=208938966 node_paths=PackedStringArray("left_sprite", "right_sprite", "top_left_sprite", "top_right_sprite", "bottom_left_sprite", "bottom_right_sprite", "top_sprite", "bottom_left_sprite_leg", "bottom_right_sprite_leg")]
+[node name="Fullbody (MainSprite)" type="Sprite2D" parent="." unique_id=208938966 node_paths=PackedStringArray("left_sprite", "right_sprite", "top_left_sprite", "top_right_sprite", "bottom_left_sprite", "bottom_right_sprite", "top_sprite", "bottom_sprite", "bottom_left_sprite_leg", "bottom_right_sprite_leg")]
 position = Vector2(597, 602)
 scale = Vector2(1.1770833, 1.1770836)
 texture = ExtResource("7_ba3x7")
@@ -64,6 +67,7 @@ top_right_sprite = NodePath("../TR")
 bottom_left_sprite = NodePath("../BL")
 bottom_right_sprite = NodePath("../BR")
 top_sprite = NodePath("../T")
+bottom_sprite = NodePath("../B")
 bottom_left_sprite_leg = NodePath("../BLLEG")
 bottom_right_sprite_leg = NodePath("../BRLEG")
 
@@ -117,52 +121,79 @@ position = Vector2(-89.54998, 73.62401)
 scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_7fvey")
 
+[node name="TLLeg" type="Sprite2D" parent="." unique_id=375128348]
+visible = false
+position = Vector2(597, 602)
+scale = Vector2(1.1770831, 1.1770835)
+texture = ExtResource("10_510ep")
+
+[node name="TRLEG" type="Sprite2D" parent="." unique_id=454222867]
+visible = false
+position = Vector2(597, 602)
+scale = Vector2(1.1770831, 1.1770835)
+texture = ExtResource("11_6kfk5")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532596838]
 visible = false
 position = Vector2(654.00006, 225)
 scale = Vector2(0.06622773, 0.06622775)
 texture = ExtResource("6_wr76s")
 
+[node name="B" type="Sprite2D" parent="." unique_id=597052082]
+visible = false
+position = Vector2(597, 602)
+scale = Vector2(1.1770833, 1.1770836)
+texture = ExtResource("13_htas3")
+
 [node name="BRLEG" type="Sprite2D" parent="." unique_id=1138271648]
+visible = false
 position = Vector2(598, 632)
 scale = Vector2(1.0833333, 1.0833333)
 texture = ExtResource("7_ysjm3")
 
 [node name="BLLEG" type="Sprite2D" parent="." unique_id=216375969]
+visible = false
 position = Vector2(599, 611.00006)
 scale = Vector2(1.1814237, 1.1814237)
 texture = ExtResource("8_tv3kx")
 
 [node name="BR" type="Sprite2D" parent="." unique_id=1462392894]
+visible = false
 position = Vector2(597, 602)
 scale = Vector2(1.1770833, 1.1770836)
 texture = ExtResource("13_bkmqt")
 
 [node name="L" type="Sprite2D" parent="." unique_id=900920704]
+visible = false
 position = Vector2(593, 588)
 scale = Vector2(1.1297743, 1.1243383)
 texture = ExtResource("14_jv4hg")
 
 [node name="R" type="Sprite2D" parent="." unique_id=1092321475]
+visible = false
 position = Vector2(596.625, 602.87494)
 scale = Vector2(1.1777345, 1.1803385)
 texture = ExtResource("15_ygi67")
 
 [node name="BL" type="Sprite2D" parent="." unique_id=143196581]
+visible = false
 position = Vector2(596.625, 602.875)
 scale = Vector2(1.1777344, 1.1803384)
 texture = ExtResource("16_q2rax")
 
 [node name="TR" type="Sprite2D" parent="." unique_id=87809005]
+visible = false
 position = Vector2(596.625, 602.875)
 scale = Vector2(1.1777344, 1.1803384)
 texture = ExtResource("17_ygi67")
 
 [node name="Tl" type="Sprite2D" parent="." unique_id=974597442]
+visible = false
 position = Vector2(596.625, 602.87494)
 scale = Vector2(1.1777345, 1.1803385)
 texture = ExtResource("18_q2rax")
 
 [node name="T" type="Sprite2D" parent="." unique_id=12361993]
+visible = false
 position = Vector2(575, 569)
 texture = ExtResource("19_q2rax")

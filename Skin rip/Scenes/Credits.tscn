@@ -2,17 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://djuid84w0fj5v" path="res://images/pixel_art_large (4) (1).png" id="1_i8h6y"]
 [ext_resource type="Script" uid="uid://di2adthkkmiw" path="res://Scripts/Camera2D.gd" id="1_uy3b0"]
-[ext_resource type="Texture2D" uid="uid://b3fx4jqw748sg" path="res://images/Placeholders/orange.jpg" id="3_iynit"]
 [ext_resource type="Script" uid="uid://cry8y03gsx24f" path="res://Scripts/Hitbox scripts/hitbox.gd" id="4_f64u0"]
+[ext_resource type="Texture2D" uid="uid://cdjdcd2firgcp" path="res://images/pixel_art_large (9).png" id="4_uy3b0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iynit"]
+load_path = "res://.godot/imported/pixel_art_small (6).png-3516503fb1a685faeff2ca546952baae.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpub1"]
-size = Vector2(2416.6665, 2528.2031)
+size = Vector2(96.32805, 42.932114)
 
 [node name="Node2D" type="Node2D" unique_id=357563671]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=558166852]
-position = Vector2(136, 1025)
+position = Vector2(1.4305115e-06, 0)
 scale = Vector2(0.08068967, 0.080689654)
+anchor_mode = 0
 script = ExtResource("1_uy3b0")
 
 [node name="background" type="Sprite2D" parent="." unique_id=903143043]
@@ -20,14 +24,10 @@ position = Vector2(596, 631)
 scale = Vector2(1.1520402, 1.1220273)
 texture = ExtResource("1_i8h6y")
 
-[node name="Label" type="Label" parent="." unique_id=1264540194]
-offset_right = 791.0
-offset_bottom = 397.0
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=765259705]
-position = Vector2(136, 1025)
-scale = Vector2(0.08068966, 0.080689654)
-texture = ExtResource("3_iynit")
+position = Vector2(129.99998, 1094)
+scale = Vector2(4.2321444, 4.232144)
+texture = SubResource("CompressedTexture2D_iynit")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1979612412 node_paths=PackedStringArray("camera")]
 script = ExtResource("4_f64u0")
@@ -35,5 +35,10 @@ scene_to_load = "res://Scenes/startscreen.tscn"
 camera = NodePath("../../Camera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1958224004]
-position = Vector2(-61.96582, -24.788086)
+position = Vector2(19.375526, -4.9620132)
 shape = SubResource("RectangleShape2D_lpub1")
+
+[node name="peach" type="Sprite2D" parent="." unique_id=1544464592]
+position = Vector2(601, 595)
+scale = Vector2(0.49047947, 0.49047947)
+texture = ExtResource("4_uy3b0")
