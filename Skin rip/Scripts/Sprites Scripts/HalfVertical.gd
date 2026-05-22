@@ -63,7 +63,6 @@ func _input(event):
 				# Only reset if not triggered yet
 				if not passed_point:
 					texture = idle_texture
-					self.visible = false
 
 
 	# Dragging while clicked
@@ -77,6 +76,7 @@ func _input(event):
 
 			# Keep click texture visible
 			texture = click_texture
+			self.visible = false
 
 			# Play click sound
 			click_sound.play()

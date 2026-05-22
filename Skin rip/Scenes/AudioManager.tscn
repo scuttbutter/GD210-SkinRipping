@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ugsc7t3jju2o"]
+
+[ext_resource type="Script" uid="uid://jmjkwfl6ua20" path="res://Scenes/audio_manager.gd" id="1_vbys1"]
+[ext_resource type="AudioStream" uid="uid://bk6c3mt7hv5l3" path="res://Music/Necrolysis Phase 1 loopable.wav" id="1_x8qvj"]
+[ext_resource type="AudioStream" uid="uid://bis8bvejjd11l" path="res://Music/Necrolysis Phase 2 loopable.wav" id="2_vbys1"]
+[ext_resource type="AudioStream" uid="uid://dgmpmkkainbn0" path="res://Music/Necrolysis Phase 3 loopable.wav" id="3_va48u"]
+[ext_resource type="AudioStream" uid="uid://dvp7nffskyfh5" path="res://Music/Necrolysis Main Theme loopable.wav" id="4_xb6i0"]
+[ext_resource type="AudioStream" uid="uid://bqwe7dtv4i0dh" path="res://Music/Necrolysis Title Screen loopable.wav" id="5_rw622"]
+[ext_resource type="AudioStream" uid="uid://bpxb1eny2ttdi" path="res://Music/wet-tearing-meat-sound-effect-cqzipu.wav" id="6_hhrx1"]
+
+[node name="Node" type="Node" unique_id=937280915]
+script = ExtResource("1_vbys1")
+
+[node name="Track1" type="AudioStreamPlayer" parent="." unique_id=1086356667]
+stream = ExtResource("1_x8qvj")
+
+[node name="Track2" type="AudioStreamPlayer" parent="." unique_id=234414800]
+stream = ExtResource("2_vbys1")
+
+[node name="Track3" type="AudioStreamPlayer" parent="." unique_id=2127142453]
+stream = ExtResource("3_va48u")
+
+[node name="FinalTrack" type="AudioStreamPlayer" parent="." unique_id=734504974]
+stream = ExtResource("4_xb6i0")
+
+[node name="TitleScreen" type="AudioStreamPlayer" parent="." unique_id=717644680]
+stream = ExtResource("5_rw622")
+
+[node name="MeatSounds" type="AudioStreamPlayer" parent="." unique_id=808071387]
+stream = ExtResource("6_hhrx1")
